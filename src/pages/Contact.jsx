@@ -1,10 +1,41 @@
-import React from 'react'
-import ContactSection from '../components/contact/ContactSection'
+import React from 'react';
+import ContactFormSection from '../components/contact/ContactFormSection';
+import ContactInfoSection from '../components/contact/ContactInfoSection';
+import ContactHeroSection from '../components/contact/ContactHeroSection';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiClock } from "react-icons/fi";
 
 const Contact = () => {
   return (
-    <ContactSection />
-  )
-}
+    <div className="text-white">
+      {/* Hero Section */}
+      <ContactHeroSection />
 
-export default Contact
+      {/* Main Content */}
+      <section className="gradient-section py-20 px-4">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <ContactFormSection />
+          <ContactInfoSection />
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-20 px-4 bg-bg-card">
+        <div className="container-custom">
+          <h3 className="text-heading text-primary mb-6 text-center">Our Location</h3>
+          <div className="rounded-xl overflow-hidden border border-gray-700">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.0964841660016!2d105.85455951540282!3d21.02876678599838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abee6b1c3f1d%3A0x9c5a8eb9e6a71c7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBUZWNobm9sb2d5!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Contact;

@@ -10,7 +10,7 @@ export default function MainLayout() {
 
   useEffect(() => {
     setLoading(true);
-    const timeout = setTimeout(() => setLoading(false), 500); // Thời gian loading
+    const timeout = setTimeout(() => setLoading(false), 1000); // Thời gian loading
     return () => clearTimeout(timeout);
   }, [location.pathname]);
 
