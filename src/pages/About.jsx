@@ -1,11 +1,17 @@
 import React from 'react'
-import ContactSection from '../components/contact/ContactSection'
-import CoreSection from '../components/about/CoreSection'
+import AboutHero from '../components/about/AboutHero';
+import CoreValues from '../components/about/CoreValues';
+import CtaSection from '../components/about/CtaSection';
 
-const Contact = () => {
+const About = () => {
   return (
-    <CoreSection></CoreSection>
-  )
-}
+    <>
+      <AboutHero />
+      <CoreValues />
+      <CtaSection />
+    </>
+  );
+};
 
-export default Contact
+export default About;
+

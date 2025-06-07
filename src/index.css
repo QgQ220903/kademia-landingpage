@@ -36,8 +36,11 @@ body {
     var(--color-bg-light) 100%
   );
   color: var(--color-text-primary);
-  font-family: "Inter", "Space Grotesk", sans-serif;
+  font-family: "Manrope", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
 }
 
 /* Typography Scale */
@@ -83,11 +86,13 @@ body {
   color: white;
   border: none;
   box-shadow: var(--shadow-primary);
+  cursor: pointer;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-primary-hover);
+  cursor: pointer;
 }
 
 .btn-secondary {
@@ -226,6 +231,7 @@ body {
     rgba(168, 139, 254, 0.1) 0%,
     transparent 70%
   );
+  pointer-events: none;
 }
 
 /* Hero specific styles */
