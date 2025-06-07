@@ -328,3 +328,21 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Ẩn thanh cuộn nhưng vẫn cho phép cuộn */
+html {
+  overflow-y: scroll; /* Luôn dành chỗ cho scrollbar để tránh layout shift */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE và Edge */
+}
+
+/* Ẩn thanh cuộn trên WebKit (Chrome, Safari) */
+html::-webkit-scrollbar {
+  display: none;
+  width: 0 !important;
+}
+
+body {
+  overflow-y: auto; /* Cho phép cuộn khi nội dung vượt quá chiều cao màn hình */
+  -webkit-overflow-scrolling: touch; /* Cuộn mượt trên mobile */
+}
