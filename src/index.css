@@ -1,0 +1,324 @@
+@import "tailwindcss";
+
+:root {
+  /* Màu chính - Violet */
+  --color-primary: #a88bfe;
+  --color-primary-light: #d3c6ff;
+  --color-primary-dark: #6e56cf;
+
+  /* Màu phụ - Neutral accent */
+  --color-secondary: #64748b; /* Slate gray thay vì tím hồng */
+  --color-secondary-light: #e2e8f0;
+
+  /* Màu nền */
+  --color-bg-dark: #0f0f1a;
+  --color-bg-light: #1c1c2e;
+  --color-bg-card: #262640; /* Màu card riêng biệt */
+
+  /* Màu text */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  /* Shadows và effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-primary: 0 10px 15px -3px rgba(168, 139, 254, 0.2);
+  --shadow-primary-hover: 0 20px 25px -5px rgba(168, 139, 254, 0.3);
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-light) 100%
+  );
+  color: var(--color-text-primary);
+  font-family: "Inter", "Space Grotesk", sans-serif;
+  line-height: 1.6;
+}
+
+/* Typography Scale */
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.text-heading {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-subheading {
+  font-size: clamp(1.125rem, 2vw, 1.25rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Button System */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-primary);
+  background: rgba(168, 139, 254, 0.1);
+  transform: translateY(-1px);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+.btn-md {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* Card System */
+.card-base {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-base::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+}
+
+.card-base:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(168, 139, 254, 0.3);
+}
+
+.card-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-primary:hover {
+  box-shadow: var(--shadow-primary-hover);
+}
+
+/* Icon containers */
+.icon-container {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: rgba(168, 139, 254, 0.1);
+  color: var(--color-primary);
+  border: 1px solid rgba(168, 139, 254, 0.2);
+}
+
+.icon-container-white {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Gradient backgrounds */
+.gradient-section {
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-dark) 0%,
+    var(--color-bg-light) 50%,
+    var(--color-bg-dark) 100%
+  );
+  position: relative;
+}
+
+.gradient-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(168, 139, 254, 0.05) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.cta-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-bg-light) 50%,
+    var(--color-bg-dark) 100%
+  );
+  position: relative;
+}
+
+.cta-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(168, 139, 254, 0.1) 0%,
+    transparent 70%
+  );
+}
+
+/* Hero specific styles */
+.hero-gradient {
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(168, 139, 254, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(110, 86, 207, 0.15) 0%,
+      transparent 50%
+    ),
+    linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="%23a88bfe" fill-opacity="0.05" cx="30" cy="30" r="1"/></g></svg>')
+    repeat;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(168, 139, 254, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(168, 139, 254, 0.4);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Responsive utilities */
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-custom {
+    padding: 0 2rem;
+  }
+}
+
+/* Focus states for accessibility */
+.btn-base:focus-visible,
+.card-base:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Text gradient */
+.text-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-light)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
