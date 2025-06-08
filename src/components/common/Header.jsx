@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import logo from "../../assets/images/logo-light.jpg";
@@ -8,6 +8,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation(); // Hook để lấy đường dẫn hiện tại
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -15,6 +16,11 @@ export default function Header() {
     { name: "Products", path: "/products" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // Function để kiểm tra link có active không
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   return (
     <header className="bg-card/95 backdrop-blur-xl border-b border-border fixed w-full z-50 shadow-lg">
@@ -31,20 +37,23 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center gap-6">
-            {/* Desktop Navigation - Giảm bớt hiệu ứng */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="px-3 py-2 text-foreground/80 hover:text-primary font-medium transition-colors duration-200 rounded-lg"
+                  className={`px-3 py-2 font-medium transition-colors duration-200 rounded-lg ${isActive(item.path)
+                      ? 'text-primary bg-primary/10 border border-primary/20'
+                      : 'text-foreground/80 hover:text-primary'
+                    }`}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
 
-            {/* Theme Toggle Button - Đơn giản */}
+            {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-200"
@@ -76,7 +85,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation - Đơn giản hóa */}
+        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden pt-4 pb-4">
             <div className="flex flex-col space-y-3 border-t border-border pt-4">
@@ -84,7 +93,10 @@ export default function Header() {
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors duration-200 rounded-lg"
+                  className={`px-4 py-2 transition-colors duration-200 rounded-lg ${isActive(item.path)
+                      ? 'text-primary bg-primary/10 border border-primary/20 font-medium'
+                      : 'text-foreground/80 hover:text-foreground'
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

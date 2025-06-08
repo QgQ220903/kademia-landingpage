@@ -24,7 +24,7 @@
     --background: 210 40% 98%;
     --foreground: 222 47% 11%;
     --border: 214 32% 91%;
-    --primary: 250 47% 60%;
+    --primary: 262 83% 58%;
     --primary-foreground: 210 40% 98%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
@@ -34,7 +34,7 @@
     --background: 222 47% 4%;
     --foreground: 213 31% 91%;
     --border: 217 33% 20%;
-    --primary: 250 47% 65%;
+    --primary: 262 83% 58%;
     --primary-foreground: 213 31% 91%;
     --card: 222 47% 8%;
     --card-foreground: 213 31% 91%;
@@ -128,13 +128,14 @@
   .card-base:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(var(--primary) / 0.3);
+    border-color: hsl(262 83% 58%); /* Violet border khi hover */
+    background: hsl(262 83% 58% / 0.05); /* Background violet nhẹ khi hover */
   }
 
   .card-primary {
     background: var(--color-primary);
     color: var(--color-primary-foreground);
-    border: 1px solid rgba(var(--primary-foreground) / 0.2);
+    border: 1px solid rgba(var(--primary));
   }
 
   .card-primary:hover {
