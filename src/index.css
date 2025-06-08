@@ -9,22 +9,13 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
-  /* Animation variables */
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-in-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
-
-  /* Shadow system using theme colors */
-  --shadow-primary: 0 10px 25px -3px rgba(var(--primary) / 0.3),
-    0 4px 6px -2px rgba(var(--primary) / 0.05);
-  --shadow-primary-hover: 0 25px 50px -12px rgba(var(--primary) / 0.4),
-    0 10px 15px -3px rgba(var(--primary) / 0.1);
-  --shadow-xl: 0 25px 50px -12px rgba(var(--foreground) / 0.25);
+  /* Simplified shadow system */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-primary: 0 4px 14px 0 rgba(var(--primary) / 0.25);
 }
 
 /* Theme colors */
@@ -50,53 +41,7 @@
   }
 }
 
-/* Keyframes */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-subtle {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes meteor {
-  0% {
-    transform: rotate(215deg) translateX(0);
-    opacity: 1;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(215deg) translateX(-500px);
-    opacity: 0;
-  }
-}
-
-/* Typography Scale */
+/* Typography Scale - Clean and Professional */
 @utility text-display {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
@@ -117,214 +62,120 @@
   line-height: 1.5;
 }
 
-/* Text gradient */
-@utility text-gradient {
-  background: linear-gradient(
-    135deg,
-    var(--color-primary),
-    color-mix(
-      in srgb,
-      var(--color-primary) 80%,
-      var(--color-primary-foreground)
-    )
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Button System */
+/* Clean Button System */
 @layer utilities {
   .btn-base {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    border-radius: 0.75rem;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
     cursor: pointer;
     text-decoration: none;
     white-space: nowrap;
+    border: none;
   }
 
   .btn-primary {
     background: var(--color-primary);
     color: var(--color-primary-foreground);
-    border: none;
     box-shadow: var(--shadow-primary);
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
+    opacity: 0.9;
   }
 
   .btn-secondary {
-    background: transparent;
+    background: var(--color-card);
     color: var(--color-foreground);
-    border: 2px solid var(--color-border);
-    backdrop-filter: blur(10px);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
   }
 
   .btn-secondary:hover {
     border-color: var(--color-primary);
-    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    box-shadow: var(--shadow-md);
     transform: translateY(-1px);
   }
 
   .btn-lg {
-    padding: 1rem 2rem;
-    font-size: 1.125rem;
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
   }
 
   .btn-md {
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
-/* Card System */
+/* Professional Card System */
 @layer utilities {
   .card-base {
     background: var(--color-card);
-    backdrop-filter: blur(20px);
     border: 1px solid var(--color-border);
-    border-radius: 1rem;
-    padding: 2rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
     color: var(--color-card-foreground);
   }
 
-  .card-base::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      color-mix(in srgb, var(--color-foreground) 20%, transparent),
-      transparent
-    );
-  }
-
   .card-base:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-xl);
-    border-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(var(--primary) / 0.3);
   }
 
   .card-primary {
     background: var(--color-primary);
     color: var(--color-primary-foreground);
-    border: 1px solid
-      color-mix(in srgb, var(--color-primary-foreground) 20%, transparent);
+    border: 1px solid rgba(var(--primary-foreground) / 0.2);
   }
 
   .card-primary:hover {
-    box-shadow: var(--shadow-primary-hover);
+    box-shadow: var(--shadow-primary);
   }
 }
 
-/* Icon containers */
+/* Clean Icon containers */
 @layer utilities {
   .icon-container {
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    background: rgba(var(--primary) / 0.1);
     color: var(--color-primary);
-    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+    border: 1px solid rgba(var(--primary) / 0.2);
   }
 
   .icon-container-white {
-    background: color-mix(
-      in srgb,
-      var(--color-primary-foreground) 10%,
-      transparent
-    );
+    background: rgba(var(--primary-foreground) / 0.1);
     color: var(--color-primary-foreground);
   }
 }
 
-/* Gradient backgrounds */
+/* Clean Gradient backgrounds */
 @layer utilities {
   .gradient-section {
     background: linear-gradient(
-      135deg,
+      180deg,
       var(--color-background) 0%,
-      color-mix(in srgb, var(--color-background) 80%, var(--color-card)) 50%,
+      rgba(var(--card) / 0.5) 50%,
       var(--color-background) 100%
     );
-    position: relative;
-  }
-
-  .gradient-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at 50% 50%,
-      color-mix(in srgb, var(--color-primary) 5%, transparent) 0%,
-      transparent 50%
-    );
-    pointer-events: none;
-  }
-
-  .cta-gradient {
-    background: linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-primary) 85%, var(--color-background)) 0%,
-      color-mix(in srgb, var(--color-primary) 75%, var(--color-background)) 50%,
-      color-mix(in srgb, var(--color-primary) 65%, var(--color-background)) 100%
-    );
-    position: relative;
-  }
-
-  .cta-gradient::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      ellipse at center,
-      color-mix(in srgb, var(--color-primary) 8%, transparent) 0%,
-      transparent 70%
-    );
-    pointer-events: none;
   }
 
   .hero-gradient {
-    background: radial-gradient(
-        circle at 20% 50%,
-        color-mix(in srgb, var(--color-primary) 15%, transparent) 0%,
-        transparent 50%
-      ),
-      radial-gradient(
-        circle at 80% 20%,
-        color-mix(in srgb, var(--color-primary) 10%, transparent) 0%,
-        transparent 50%
-      ),
-      linear-gradient(
-        135deg,
-        var(--color-background) 0%,
-        var(--color-card) 100%
-      );
+    background: var(--color-background);
     position: relative;
-    overflow: hidden;
   }
 }
 
@@ -346,28 +197,54 @@
 
   html {
     scroll-behavior: smooth;
-    /* Hide scrollbar but allow scrolling */
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
-  }
-
-  html::-webkit-scrollbar {
-    display: none;
-    width: 0 !important;
   }
 
   body {
     background: var(--color-background);
     color: var(--color-foreground);
-    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+  }
+}
+
+/* Focus states for accessibility */
+@layer utilities {
+  .btn-base:focus-visible,
+  .card-base:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
   }
 }
 
@@ -377,4 +254,83 @@
     padding: 0 2rem;
   }
 }
-s
+
+@media (max-width: 640px) {
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Enhanced Hero Background for Light/Dark Mode */
+@layer utilities {
+  .hero-background-light {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(250 47% 97%) 25%,
+      hsl(210 40% 96%) 50%,
+      hsl(250 47% 97%) 75%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  .hero-background-dark {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--background)) 0%,
+      hsl(222 47% 6%) 25%,
+      hsl(217 33% 8%) 50%,
+      hsl(222 47% 6%) 75%,
+      hsl(var(--background)) 100%
+    );
+  }
+
+  /* Alternative option - more subtle */
+  .hero-background-light-subtle {
+    background: radial-gradient(
+        ellipse at top,
+        hsl(250 47% 98%) 0%,
+        transparent 50%
+      ),
+      radial-gradient(ellipse at bottom, hsl(210 40% 97%) 0%, transparent 50%),
+      hsl(var(--background));
+  }
+
+  .hero-background-dark-subtle {
+    background: radial-gradient(
+        ellipse at top,
+        hsl(222 47% 6%) 0%,
+        transparent 50%
+      ),
+      radial-gradient(ellipse at bottom, hsl(217 33% 8%) 0%, transparent 50%),
+      hsl(var(--background));
+  }
+
+  /* Enhanced pattern overlay for light mode */
+  .pattern-overlay-light {
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        hsl(var(--primary)) 1px,
+        transparent 0
+      ),
+      linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(var(--primary), 0.02) 50%,
+        transparent 60%
+      );
+    background-size: 40px 40px, 80px 80px;
+    opacity: 0.4;
+  }
+
+  .pattern-overlay-dark {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      hsl(var(--primary)) 1px,
+      transparent 0
+    );
+    background-size: 40px 40px;
+    opacity: 0.2;
+  }
+}
