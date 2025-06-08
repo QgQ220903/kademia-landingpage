@@ -1,52 +1,73 @@
+import { useTheme } from "../../contexts/ThemeContext";
+
 export default function CtaSection() {
+  const { theme } = useTheme();
+
   return (
-    <section className="py-24 px-4 cta-gradient relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl"></div>
+    <section className="py-20 px-4 relative bg-gradient-to-br from-background via-card/30 to-background">
+      {/* Subtle Background Grid */}
+      <div className="absolute inset-0 opacity-30 pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, var(--color-border) 1px, transparent 0)`,
+            backgroundSize: '24px 24px'
+          }}
+        />
       </div>
 
-      <div className="container-custom text-center relative z-10">
-        {/* Main CTA Content */}
-        <div className="max-w-4xl mx-auto">
-          {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8">
-            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
-            <span className="text-sm font-medium text-white">Ready to Get Started?</span>
+      {/* Content Container */}
+      <div className="container-custom relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+
+          {/* Status Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/60 bg-card/50 backdrop-blur-sm mb-8 animate-fade-in">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse-subtle" />
+            <span className="text-sm font-medium text-foreground/80">
+              Ready to Transform Your Business
+            </span>
           </div>
 
-          {/* Heading */}
-          <h2 className="text-heading mb-6">
-            Transform Your Business with{" "}
-            <span className="text-gradient">Modern Technology</span>
+          {/* Main Heading */}
+          <h2 className="text-display font-bold text-foreground mb-6 animate-fade-in-delay-1 opacity-0">
+            Get Started with{" "}
+            <span className="text-gradient">Professional Solutions</span>
           </h2>
 
           {/* Description */}
-          <p className="text-subheading text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Contact us today for a <span className="text-white font-semibold">free consultation</span> and
-            personalized product demo tailored to your specific business needs and objectives.
+          <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in-delay-2 opacity-0">
+            Schedule a free consultation to discover how our tailored solutions
+            can streamline your operations and drive measurable results for your business.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-delay-3 opacity-0">
             <a
               href="/contact"
-              className="btn-base btn-primary btn-lg group animate-pulse-glow"
+              className="btn-base btn-primary btn-lg group"
             >
               <svg
-                className="w-5 h-5 mr-2"
+                className="w-5 h-5 mr-2 transition-transform group-hover:scale-110"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
               </svg>
-              <span>Get Started Now</span>
+              <span>Start Free Consultation</span>
             </a>
           </div>
         </div>
       </div>
+
+      {/* Minimal decorative elements */}
+      <div className="absolute top-20 left-10 w-1 h-1 bg-primary/40 rounded-full animate-pulse-subtle" />
+      <div className="absolute bottom-20 right-10 w-1 h-1 bg-primary/40 rounded-full animate-pulse-subtle" style={{ animationDelay: '2s' }} />
     </section>
   );
 }

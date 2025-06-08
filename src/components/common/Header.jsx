@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import logo from "../../assets/images/logo.png"
+import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
+import logo from "../../assets/images/logo-light.jpg";
+import logoDark from "../../assets/images/logo-dark.png";
+import { useTheme } from "../../contexts/ThemeContext";
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -13,56 +17,74 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-darkblue/90 backdrop-blur-md border-b border-gray-700 fixed w-full z-50">
-      <nav className="container mx-auto px-4 py-3">
+    <header className="bg-card/95 backdrop-blur-xl border-b border-border fixed w-full z-50 shadow-lg">
+      <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
-          {/* Logo as Image */}
           <Link to="/" className="flex items-center">
-            <img
-              src={logo} // Use the imported logo
-              alt="Kademia Logo"
-              className="h-10 w-auto rounded" // Added rounded for better appearance
-            />
+            <div className="w-32 h-12 flex items-center justify-center">
+              <img
+                src={theme === 'dark' ? logoDark || logo : logo}
+                alt="Logo"
+                className="max-h-full max-w-full object-contain"
+              />
+            </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="text-gray-300 hover:text-primary transition-colors duration-300 relative group"
-              >
-                {item.name}
-                <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-primary focus:outline-none"
-            >
-              {isOpen ? (
-                <FiX size={24} />
-              ) : (
-                <FiMenu size={24} />
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden pt-4 pb-2">
-            <div className="flex flex-col space-y-3">
+          <div className="flex items-center gap-6">
+            {/* Desktop Navigation - Giảm bớt hiệu ứng */}
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className="text-gray-300 hover:text-primary px-3 py-2 rounded hover:bg-blue-900/50 transition-colors duration-300"
+                  className="px-3 py-2 text-foreground/80 hover:text-primary font-medium transition-colors duration-200 rounded-lg"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+
+            {/* Theme Toggle Button - Đơn giản */}
+            <button
+              onClick={toggleTheme}
+              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-200"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
+            </button>
+
+            {/* Mobile controls */}
+            <div className="md:hidden flex items-center gap-4">
+              {/* Theme Toggle Button - Mobile */}
+              <button
+                onClick={toggleTheme}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-colors duration-200"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
+              </button>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-colors duration-200"
+                aria-label="Toggle menu"
+              >
+                {isOpen ? <FiX size={20} /> : <FiMenu size={20} />}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Navigation - Đơn giản hóa */}
+        {isOpen && (
+          <div className="md:hidden pt-4 pb-4">
+            <div className="flex flex-col space-y-3 border-t border-border pt-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors duration-200 rounded-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
