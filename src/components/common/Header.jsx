@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
+import { useTranslation } from 'react-i18next';
 import logo from "../../assets/images/logo-light.jpg";
 import logoDark from "../../assets/images/logo-dark.png";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -8,16 +9,20 @@ import { useTheme } from "../../contexts/ThemeContext";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const location = useLocation(); // Hook để lấy đường dẫn hiện tại
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === 'en' ? 'vi' : 'en');
+  };
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Products", path: "/products" },
-    { name: "Contact", path: "/contact" },
+    { name: t('menu.home'), path: "/" },
+    { name: t('menu.about'), path: "/about" },
+    { name: t('menu.products'), path: "/products" },
+    { name: t('menu.contact'), path: "/contact" },
   ];
 
-  // Function để kiểm tra link có active không
   const isActive = (path) => {
     return location.pathname === path;
   };
@@ -44,8 +49,8 @@ export default function Header() {
                   key={item.path}
                   to={item.path}
                   className={`px-3 py-2 font-medium transition-colors duration-200 rounded-lg ${isActive(item.path)
-                      ? 'text-primary bg-primary/10 border border-primary/20'
-                      : 'text-foreground/80 hover:text-primary'
+                    ? 'text-primary bg-primary/10 border border-primary/20'
+                    : 'text-foreground/80 hover:text-primary'
                     }`}
                 >
                   {item.name}
@@ -53,22 +58,40 @@ export default function Header() {
               ))}
             </div>
 
+            {/* Language Toggle Button */}
+            <button
+              onClick={toggleLanguage}
+              className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-200"
+              aria-label={t('common.language')}
+            >
+              {i18n.language.toUpperCase()}
+            </button>
+
             {/* Theme Toggle Button */}
             <button
               onClick={toggleTheme}
               className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-200"
-              aria-label="Toggle theme"
+              aria-label={t('common.theme')}
             >
               {theme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
             </button>
 
             {/* Mobile controls */}
             <div className="md:hidden flex items-center gap-4">
+              {/* Language Toggle - Mobile */}
+              <button
+                onClick={toggleLanguage}
+                className="w-9 h-9 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-colors duration-200"
+                aria-label={t('common.language')}
+              >
+                {i18n.language.toUpperCase()}
+              </button>
+
               {/* Theme Toggle Button - Mobile */}
               <button
                 onClick={toggleTheme}
                 className="w-9 h-9 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-colors duration-200"
-                aria-label="Toggle theme"
+                aria-label={t('common.theme')}
               >
                 {theme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
               </button>
@@ -94,8 +117,8 @@ export default function Header() {
                   key={item.path}
                   to={item.path}
                   className={`px-4 py-2 transition-colors duration-200 rounded-lg ${isActive(item.path)
-                      ? 'text-primary bg-primary/10 border border-primary/20 font-medium'
-                      : 'text-foreground/80 hover:text-foreground'
+                    ? 'text-primary bg-primary/10 border border-primary/20 font-medium'
+                    : 'text-foreground/80 hover:text-foreground'
                     }`}
                   onClick={() => setIsOpen(false)}
                 >

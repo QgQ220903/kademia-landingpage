@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from 'react-i18next';
 
 export default function AboutHero() {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   // Animate elements on mount
@@ -29,15 +31,12 @@ export default function AboutHero() {
 
         {/* Main Heading */}
         <h1 className="text-display mb-6 text-foreground">
-          About{' '}
-          <span className="text-primary font-bold">
-            Kademia
-          </span>
+          {t('about.hero.title')} <span className='text-display mb-6 text-primary'>{t('about.hero.titleHighlight')}</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-subheading text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-          Kademia is a premier partner providing consulting and training services in digital transformation for businesses. We specialize in optimizing processes, enhancing efficiency, integrating new technologies, and leveraging workforce skills to ensure sustainable growth for companies in the digital age.
+          {t('about.hero.subtitle')}
         </p>
 
       </div>

@@ -1,0 +1,236 @@
+{
+  "menu": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "common": {
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "hero": {
+    "title": {
+      "start": "Solutions",
+      "highlight": "Technology",
+      "end": "for Modern Businesses"
+    },
+    "subtitle": "Elevate your business with high-performance technology solutions that optimize costs, drive innovation, and boost growth in the digital era.",
+    "cta": {
+      "contact": "Contact Now",
+      "explore": "Explore Features"
+    }
+  },
+  "features": {
+    "title": "Core",
+    "titleHighlight": "Services",
+    "subtitle": "We provide essential solutions that help your business grow smartly and rapidly through strategic consulting, digital transformation, and workforce development.",
+    "items": {
+      "supplyChain": {
+        "title": "Supply Chain Performance Consulting",
+        "description": "Optimize supply chain operations with strategic consulting to enhance efficiency, reduce costs, and improve overall performance"
+      },
+      "digital": {
+        "title": "Digital Transformation & Data Analytics",
+        "description": "Drive innovation through comprehensive digital transformation strategies and advanced data analytics solutions"
+      },
+      "training": {
+        "title": "Training & Skill Development",
+        "description": "Empower your workforce with training programs on performance improvement tools and digital transformation"
+      }
+    }
+  },
+  "capabilities": {
+    "title": "Capabilities",
+    "titleHighlight": "Digital Technology",
+    "subtitle": "We help organizations drive innovation and efficiency through modern digital tools, enabling rapid value creation and sustainable growth.",
+    "items": {
+      "lowCode": {
+        "title": "Low-Code Platform with Power Platform",
+        "description": "Accelerate app development with Microsoft Power Platform, reducing time-to-market by up to 70%"
+      },
+      "analytics": {
+        "title": "Data Analytics with Power BI",
+        "description": "Transform data into actionable insights using Power BI and advanced analytics solutions"
+      },
+      "cloud": {
+        "title": "Cloud Services Consulting",
+        "description": "Deploy secure and scalable solutions with AWS and Microsoft Azure cloud platforms"
+      },
+      "automation": {
+        "title": "Robotic Process Automation",
+        "description": "Automate business processes using n8n and Power Automate to increase efficiency"
+      }
+    }
+  },
+  "cta": {
+    "badge": "Ready to Transform Your Business",
+    "title": {
+      "start": "Get Started with",
+      "highlight": "Professional Solutions"
+    },
+    "description": "Schedule a free consultation to discover how our tailored solutions can optimize operations and deliver measurable results.",
+    "button": "Start Free Consultation"
+  },
+  "footer": {
+    "description": "Empowering businesses through innovative technology solutions.",
+    "contact": {
+      "title": "Contact Information",
+      "address": "5 Me Linh, District 1, Ho Chi Minh City, Vietnam",
+      "phone": "+84 (28) 3821 8888",
+      "email": "hello@kademia.com",
+      "hours": "Monday - Friday: 8:00 AM - 6:00 PM"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "about": "About Us",
+      "product": "Products",
+      "contact": "Contact"
+    },
+    "copyright": "© {{year}} Kademia. All rights reserved."
+  },
+  "about": {
+    "hero": {
+      "title": "About",
+      "titleHighlight": "Kademia",
+      "subtitle": "Kademia is a leading partner providing consulting and training services in digital transformation for businesses. We specialize in optimizing processes, improving efficiency, integrating new technologies, and developing workforce skills to ensure sustainable growth in the digital era."
+    },
+    "coreValues": {
+      "title": {
+        "start": "Core",
+        "highlight": "Values"
+      },
+      "subtitle": "The foundational principles guiding every decision and action we take, ensuring excellent results and upholding the highest ethical standards.",
+      "items": [
+        {
+          "icon": "users",
+          "title": "Customer-Centric Approach",
+          "description": "All our solutions place the customer at the center."
+        },
+        {
+          "icon": "award",
+          "title": "Outstanding Quality",
+          "description": "We are committed to delivering the highest standards in every product and service."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Continuous Innovation",
+          "description": "We constantly innovate and adopt the latest technologies to stay ahead of trends."
+        },
+        {
+          "icon": "globe",
+          "title": "Global Mindset",
+          "description": "Our solutions meet international standards and are ready for global integration."
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": {
+        "start": "Ready to",
+        "highlight": "Transform",
+        "end": "Your Business?"
+      },
+      "description": "Contact our team today for a personalized consultation and discover the perfect solution tailored for your enterprise.",
+      "button": "Get in Touch"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help and answer any questions you might have."
+    },
+    "form": {
+      "heading": "Send us a message",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "placeholder": {
+        "name": "Your name",
+        "email": "your@email.com",
+        "subject": "Subject",
+        "message": "Your message..."
+      },
+      "button": "Send Message"
+    },
+    "info": {
+      "heading": "Contact Info",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "emailValue": "kademiavietnam@gmail.com",
+      "phoneValue": "(+84) 96 876 4080",
+      "addressValue": "5 Me Linh Point, District 1, Ho Chi Minh city, Vietnam",
+      "workingHoursHeading": "Working Hours",
+      "workingHours": {
+        "monFri": "Mon-Fri",
+        "saturday": "Saturday",
+        "sunday": "Sunday",
+        "monFriValue": "8:30 AM - 5:30 PM",
+        "saturdayValue": "8:30 AM - 12:00 PM",
+        "sundayValue": "Closed"
+      }
+    },
+    "map": {
+      "heading": "Our Location"
+    }
+  },
+  "product": {
+    "hero": {
+      "title": {
+        "start": "Discover",
+        "highlight": "Our Products",
+        "end": ""
+      },
+      "subtitle": "Explore our innovative product suite designed to accelerate your business growth and digital transformation."
+    },
+    "features": {
+      "title": "Product",
+      "titleHighlight": "Features",
+      "subtitle": "Key features that set our products apart.",
+      "items": {
+        "feature1": {
+          "title": "Automation Tools",
+          "description": "Streamline your workflow with our advanced automation solutions."
+        },
+        "feature2": {
+          "title": "Cloud Integration",
+          "description": "Seamlessly connect and scale with secure cloud services."
+        },
+        "feature3": {
+          "title": "Mobile Ready",
+          "description": "Access and manage your business anytime, anywhere with our mobile solutions."
+        }
+      }
+    },
+    "featured": {
+      "title": "Featured",
+      "titleHighlight": "Products",
+      "subtitle": "Discover our flagship products designed to solve your most critical business challenges.",
+      "items": {
+        "product1": {
+          "title": "Kademia Automation Suite",
+          "description": "Comprehensive automation platform that streamlines workflows and eliminates repetitive tasks across your organization."
+        },
+        "product2": {
+          "title": "Business Intelligence Dashboard",
+          "description": "Advanced analytics platform providing real-time insights and data-driven decision support for business leaders."
+        },
+        "product3": {
+          "title": "Enterprise Security Platform",
+          "description": "Multi-layered security solution protecting your digital assets with advanced threat detection and compliance management."
+        }
+      }
+    },
+    "cta": {
+      "title": {
+        "start": "Ready to",
+        "highlight": "Experience?",
+        "end": ""
+      },
+      "description": "Contact us today to get a personalized demo and see how our products can empower your business.",
+      "button": "Request a Demo"
+    }
+  }
+}

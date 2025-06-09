@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection() {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   // Animate elements on mount
@@ -31,17 +33,16 @@ export default function HeroSection() {
 
           {/* Main Heading */}
           <h1 className="text-display mb-6 text-foreground">
-            Modern{' '}
+            {t('hero.title.start')}{' '}
             <span className="text-primary font-bold">
-              Technology
+              {t('hero.title.highlight')}
             </span>{' '}
-            Solutions for Businesses
+            {t('hero.title.end')}
           </h1>
 
           {/* Subtitle */}
           <p className="text-subheading text-foreground/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Elevate your business with high-performance, cost-effective, and optimized technology solutions
-            that drive innovation and growth in the digital age.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
@@ -50,7 +51,7 @@ export default function HeroSection() {
               href="/contact"
               className="btn-base btn-secondary btn-lg group"
             >
-              <span className="relative z-10">Contact Us</span>
+              <span className="relative z-10">{t('hero.cta.contact')}</span>
             </a>
 
             <a
@@ -58,7 +59,7 @@ export default function HeroSection() {
               className="btn-base btn-primary btn-lg group"
             >
               <span className="flex items-center gap-2">
-                Explore Features
+                {t('hero.cta.explore')}
                 <svg
                   className="w-5 h-5 transition-transform duration-200 group-hover:translate-x-1"
                   fill="none"

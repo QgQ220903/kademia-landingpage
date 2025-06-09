@@ -1,27 +1,29 @@
 import { FaTruckMoving, FaChartLine, FaGraduationCap } from "react-icons/fa";
 import { useState, useEffect, useRef } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from 'react-i18next';
 
 export default function FeaturesSection() {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
 
   const features = [
     {
       icon: <FaTruckMoving className="w-6 h-6" />,
-      title: "Supply Chain Performance Consulting",
-      description: "Optimize your supply chain operations with strategic consulting to enhance efficiency, reduce costs, and improve overall performance",
+      title: t('features.items.supplyChain.title'),
+      description: t('features.items.supplyChain.description'),
     },
     {
       icon: <FaChartLine className="w-6 h-6" />,
-      title: "Digital Transformation & Data Analytics",
-      description: "Drive innovation through comprehensive digital transformation strategies and advanced data analytics solutions",
+      title: t('features.items.digital.title'),
+      description: t('features.items.digital.description'),
     },
     {
       icon: <FaGraduationCap className="w-6 h-6" />,
-      title: "Training & Upskilling",
-      description: "Empower your workforce with targeted training programs on performance improvement tools and digital transformation",
+      title: t('features.items.training.title'),
+      description: t('features.items.training.description'),
     },
   ];
 
@@ -52,11 +54,11 @@ export default function FeaturesSection() {
         {/* Section Header */}
         <div className={`text-center mb-12 transition-opacity duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
           <h2 className="text-3xl font-bold mb-4 text-foreground">
-            Our Core <span className="text-primary">Services</span>
+            {t('features.title')}{' '}
+            <span className="text-primary">{t('features.titleHighlight')}</span>
           </h2>
           <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            We provide essential solutions to help your business grow smarter and faster
-            through strategic consulting, digital innovation, and workforce development.
+            {t('features.subtitle')}
           </p>
         </div>
 

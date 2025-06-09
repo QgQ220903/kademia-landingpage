@@ -1,33 +1,22 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FiUsers, FiAward, FiGlobe, FiTrendingUp } from "react-icons/fi";
 import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
+
+const iconMap = {
+  users: <FiUsers className="w-5 h-5" />,
+  award: <FiAward className="w-5 h-5" />,
+  "trending-up": <FiTrendingUp className="w-5 h-5" />,
+  globe: <FiGlobe className="w-5 h-5" />,
+};
 
 const CoreValues = () => {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef(null);
+  const { t } = useTranslation();
 
-  const values = [
-    {
-      icon: <FiUsers className="w-5 h-5" />,
-      title: "Customer Centricity",
-      description: "Our solutions are designed with the customer at the heart of everything we do."
-    },
-    {
-      icon: <FiAward className="w-5 h-5" />,
-      title: "Exceptional Quality",
-      description: "We are committed to delivering the highest standards in every product and service."
-    },
-    {
-      icon: <FiTrendingUp className="w-5 h-5" />,
-      title: "Continuous Innovation",
-      description: "We embrace change and consistently adopt the latest technologies to stay ahead."
-    },
-    {
-      icon: <FiGlobe className="w-5 h-5" />,
-      title: "Global Mindset",
-      description: "Our solutions meet international standards and are built for global integration."
-    }
-  ];
+  // Lấy danh sách giá trị cốt lõi từ i18n
+  const values = t("about.coreValues.items", { returnObjects: true });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -55,12 +44,11 @@ const CoreValues = () => {
         {/* Section Header */}
         <div className={`text-center mb-12 transition-opacity duration-500 ${isInView ? 'opacity-100' : 'opacity-0'}`}>
           <h2 className="text-3xl font-bold mb-4 text-foreground">
-            Our Core <span className="text-primary">Values</span>
+            {t("about.coreValues.title.start")}{' '}
+            <span className="text-primary font-bold">
+              {t("about.coreValues.title.highlight")}
+            </span>
           </h2>
-          <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
-            Fundamental principles that guide our decisions and actions, ensuring we deliver exceptional
-            results while maintaining the highest ethical standards.
-          </p>
         </div>
 
         {/* Values Grid */}
@@ -72,7 +60,7 @@ const CoreValues = () => {
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               <div className="icon-container mb-4">
-                {item.icon}
+                {iconMap[item.icon]}
               </div>
               <h3 className="text-xl font-semibold mb-3 text-foreground">
                 {item.title}

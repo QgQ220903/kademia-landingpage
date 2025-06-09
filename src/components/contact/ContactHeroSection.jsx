@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme } from "../../contexts/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const ContactHeroSection = () => {
   const { theme } = useTheme();
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
   // Animate elements on mount
@@ -29,13 +31,13 @@ const ContactHeroSection = () => {
         {/* Main Heading */}
         <h1 className="text-display mb-6 text-foreground">
           <span className="text-primary font-bold">
-            Get in Touch
+            {t('contact.hero.title')}
           </span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-subheading text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
-          We're here to help and answer any questions you might have.
+          {t('contact.hero.subtitle')}
         </p>
       </div>
 

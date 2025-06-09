@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -16,30 +17,32 @@ import logoDark from "../../assets/images/logo-dark.png";
 
 export default function Footer() {
   const { theme } = useTheme();
+  const { t } = useTranslation();
+
   const companyInfo = [
     {
       icon: <FaMapMarkerAlt className="w-4 h-4" />,
-      text: "Floor 15, Bitexco Financial Tower, District 1, Ho Chi Minh City"
+      text: t('footer.contact.address')
     },
     {
       icon: <FaPhoneAlt className="w-4 h-4" />,
-      text: "+84 (28) 3821 8888"
+      text: t('footer.contact.phone')
     },
     {
       icon: <FaEnvelope className="w-4 h-4" />,
-      text: "hello@kademia.com"
+      text: t('footer.contact.email')
     },
     {
       icon: <FaBusinessTime className="w-4 h-4" />,
-      text: "Mon - Fri: 8:00 AM - 6:00 PM"
+      text: t('footer.contact.hours')
     }
   ];
 
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Product", href: "/product" },
-    { name: "Contact", href: "/contact" }
+    { name: t('footer.quickLinks.home'), href: "/" },
+    { name: t('footer.quickLinks.about'), href: "/about" },
+    { name: t('footer.quickLinks.product'), href: "/product" },
+    { name: t('footer.quickLinks.contact'), href: "/contact" }
   ];
 
   const socialLinks = [
@@ -61,13 +64,13 @@ export default function Footer() {
               className="h-12 w-auto object-contain mb-4"
             />
             <p className="text-foreground/70 text-sm">
-              Empowering businesses through innovative technology solutions.
+              {t('footer.description')}
             </p>
           </div>
 
           {/* Contact Column */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-3">Contact Info</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-3">{t('footer.contact.title')}</h4>
             <ul className="space-y-2">
               {companyInfo.map((item, index) => (
                 <li key={index} className="flex items-start gap-3">
@@ -80,7 +83,7 @@ export default function Footer() {
 
           {/* Links Column */}
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-3">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-3">{t('footer.quickLinks.title')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -116,7 +119,7 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-foreground/70">
-            © {new Date().getFullYear()} Kademia. All rights reserved.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>
