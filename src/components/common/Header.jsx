@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import { useTranslation } from 'react-i18next';
-import logo from "../../assets/images/logo-light.jpg";
+import logo from "../../assets/images/logo-light.png";
 import logoDark from "../../assets/images/logo-dark.png";
 import { useTheme } from "../../contexts/ThemeContext";
 

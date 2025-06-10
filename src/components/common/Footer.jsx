@@ -12,7 +12,7 @@ import {
 } from "react-icons/fa";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { useTheme } from "../../contexts/ThemeContext";
-import logo from "../../assets/images/logo-light.jpg";
+import logo from "../../assets/images/logo-light.png";
 import logoDark from "../../assets/images/logo-dark.png";
 
 export default function Footer() {
