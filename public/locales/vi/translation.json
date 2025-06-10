@@ -77,15 +77,15 @@
     "contact": {
       "title": "Thông tin liên hệ",
       "address": "5 Mê Linh, Quận 1, Thành phố Hồ Chí Minh, Việt Nam",
-      "phone": "+84 (28) 3821 8888",
-      "email": "hello@kademia.com",
+      "phone": "(+84) 96 876 4080",
+      "email": "kademiavietnam@gmail.com",
       "hours": "Thứ 2 - Thứ 6: 8:00 Sáng - 6:00 Chiều"
     },
     "quickLinks": {
       "title": "Liên kết nhanh",
       "home": "Trang chủ",
       "about": "Về chúng tôi",
-      "product": "Sản phẩm",
+      "products": "Sản phẩm",
       "contact": "Liên hệ"
     },
     "copyright": "© {{year}} Kademia. Đã đăng ký bản quyền."

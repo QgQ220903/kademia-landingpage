@@ -11,9 +11,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />  {/* Bỏ dấu / */}
-          <Route path="products" element={<Product />} /> {/* Bỏ dấu / */}
-          <Route path="about" element={<About />} />      {/* Bỏ dấu / */}
+          <Route path="contact" element={<Contact />} />
+          <Route path="products" element={<Product />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

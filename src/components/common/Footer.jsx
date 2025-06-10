@@ -41,15 +41,13 @@ export default function Footer() {
   const quickLinks = [
     { name: t('footer.quickLinks.home'), href: "/" },
     { name: t('footer.quickLinks.about'), href: "/about" },
-    { name: t('footer.quickLinks.product'), href: "/product" },
+    { name: t('footer.quickLinks.product'), href: "/products" },
     { name: t('footer.quickLinks.contact'), href: "/contact" }
   ];
 
   const socialLinks = [
-    { icon: <FaFacebookF className="w-4 h-4" />, url: "#" },
-    { icon: <FaLinkedinIn className="w-4 h-4" />, url: "#" },
-    { icon: <FaTwitter className="w-4 h-4" />, url: "#" },
-    { icon: <FaInstagram className="w-4 h-4" />, url: "#" }
+    { icon: <FaFacebookF className="w-4 h-4" />, url: "https://www.facebook.com/profile.php?id=61567618885850" },
+    { icon: <FaLinkedinIn className="w-4 h-4" />, url: "https://www.linkedin.com/company/kademia-vietnam/" },
   ];
 
   return (
@@ -112,6 +110,7 @@ export default function Footer() {
                 href={social.url}
                 className="text-foreground/70 hover:text-primary transition-colors"
                 aria-label={`Social media link ${index}`}
+                target="_blank"
               >
                 {social.icon}
               </a>
