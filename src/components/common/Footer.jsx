@@ -22,11 +22,12 @@ export default function Footer() {
   const companyInfo = [
     {
       icon: <FaMapMarkerAlt className="w-4 h-4" />,
-      text: t('footer.contact.address')
+      text: t('footer.contact.address'),
     },
     {
       icon: <FaPhoneAlt className="w-4 h-4" />,
-      text: t('footer.contact.phone')
+      text: t('footer.contact.phone'),
+
     },
     {
       icon: <FaEnvelope className="w-4 h-4" />,
@@ -70,12 +71,38 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-3">{t('footer.contact.title')}</h4>
             <ul className="space-y-2">
-              {companyInfo.map((item, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="text-primary mt-0.5">{item.icon}</span>
-                  <span className="text-sm text-foreground/70">{item.text}</span>
-                </li>
-              ))}
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-0.5"><FaMapMarkerAlt className="w-4 h-4" /></span>
+                <a
+                  href={`https://maps.google.com/?q=${encodeURIComponent(t('footer.contact.address'))}`}
+                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                  target="_blank" rel="noopener noreferrer"
+                >
+                  {t('footer.contact.address')}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-0.5"><FaPhoneAlt className="w-4 h-4" /></span>
+                <a
+                  href={`tel:${t('footer.contact.phone').replace(/[^+\d]/g, '')}`}
+                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                >
+                  {t('footer.contact.phone')}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-0.5"><FaEnvelope className="w-4 h-4" /></span>
+                <a
+                  href={`mailto:${t('footer.contact.email')}`}
+                  className="text-sm text-foreground/70 hover:text-primary transition-colors"
+                >
+                  {t('footer.contact.email')}
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-0.5"><FaBusinessTime className="w-4 h-4" /></span>
+                <span className="text-sm text-foreground/70">{t('footer.contact.hours')}</span>
+              </li>
             </ul>
           </div>
 
