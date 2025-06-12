@@ -9,7 +9,7 @@ import { useTheme } from "../../contexts/ThemeContext";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('en');
   const location = useLocation();
 
   const toggleLanguage = () => {
