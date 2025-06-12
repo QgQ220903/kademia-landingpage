@@ -12,8 +12,8 @@
   "hero": {
     "title": {
       "start": "Giải pháp",
-      "highlight": "Công nghệ",
-      "end": "cho Doanh nghiệp Hiện đại"
+      "highlight": "công nghệ",
+      "end": "cho doanh nghiệp Hiện đại"
     },
     "subtitle": "Nâng tầm doanh nghiệp của bạn với các giải pháp công nghệ hiệu suất cao giúp tối ưu chi phí, thúc đẩy đổi mới và tăng trưởng trong kỷ nguyên số.",
     "cta": {
@@ -23,11 +23,11 @@
   },
   "features": {
     "title": "Dịch vụ",
-    "titleHighlight": "Cốt lõi",
+    "titleHighlight": "cốt lõi",
     "subtitle": "Chúng tôi cung cấp các giải pháp thiết yếu giúp doanh nghiệp phát triển thông minh và nhanh chóng thông qua tư vấn chiến lược, chuyển đổi số và phát triển nguồn nhân lực.",
     "items": {
       "supplyChain": {
-        "title": "Tư vấn Hiệu suất Chuỗi cung ứng",
+        "title": "Tư vấn hiệu suất chuỗi cung ứng",
         "description": "Tối ưu hóa hoạt động chuỗi cung ứng với tư vấn chiến lược để nâng cao hiệu quả, giảm chi phí và cải thiện hiệu suất tổng thể"
       },
       "digital": {
@@ -42,7 +42,7 @@
   },
   "capabilities": {
     "title": "Năng lực",
-    "titleHighlight": "Công nghệ số",
+    "titleHighlight": "công nghệ số",
     "subtitle": "Chúng tôi giúp tổ chức thúc đẩy đổi mới và hiệu quả thông qua các công cụ số hiện đại, tạo ra giá trị nhanh chóng và tăng trưởng bền vững.",
     "items": {
       "lowCode": {
@@ -54,11 +54,11 @@
         "description": "Biến dữ liệu thành thông tin chi tiết có thể hành động bằng Power BI và các giải pháp phân tích nâng cao"
       },
       "cloud": {
-        "title": "Tư vấn Dịch vụ Đám mây",
+        "title": "Tư vấn dịch vụ đám mây",
         "description": "Triển khai các giải pháp bảo mật và mở rộng quy mô với nền tảng đám mây AWS và Microsoft Azure"
       },
       "automation": {
-        "title": "Tự động hóa Quy trình bằng Robot",
+        "title": "Tự động hóa quy trình bằng Robot",
         "description": "Tự động hóa quy trình kinh doanh sử dụng n8n và Power Automate để tăng hiệu suất"
       }
     }
@@ -67,7 +67,7 @@
     "badge": "Sẵn sàng chuyển đổi doanh nghiệp của bạn",
     "title": {
       "start": "Bắt đầu với",
-      "highlight": "Giải pháp Chuyên nghiệp"
+      "highlight": "Giải pháp chuyên nghiệp"
     },
     "description": "Đặt lịch tư vấn miễn phí để khám phá cách các giải pháp tùy chỉnh của chúng tôi có thể tối ưu hóa hoạt động và mang lại kết quả đo lường được.",
     "button": "Bắt đầu tư vấn miễn phí"
@@ -78,7 +78,7 @@
       "title": "Thông tin liên hệ",
       "address": "5 Mê Linh, Quận 1, Thành phố Hồ Chí Minh, Việt Nam",
       "phone": "(+84) 96 876 4080",
-      "email": "kademiavietnam@gmail.com",
+      "email": "hello@kademia.edu.vn",
       "hours": "Thứ 2 - Thứ 6: 8:00 Sáng - 6:00 Chiều"
     },
     "quickLinks": {
@@ -159,7 +159,7 @@
       "email": "Email",
       "phone": "Điện thoại",
       "address": "Địa chỉ",
-      "emailValue": "kademiavietnam@gmail.com",
+      "emailValue": "hello@kademia.edu.vn",
       "phoneValue": "(+84) 96 876 4080",
       "addressValue": "Tòa nhà 5 Mê Linh Point, Quận 1, TP. Hồ Chí Minh, Việt Nam",
       "workingHoursHeading": "Giờ làm việc",
@@ -180,8 +180,8 @@
     "hero": {
       "title": {
         "start": "Khám phá",
-        "highlight": "Sản phẩm",
-        "end": "Của chúng tôi"
+        "highlight": "sản phẩm",
+        "end": "của chúng tôi"
       },
       "subtitle": "Khám phá bộ sản phẩm đổi mới được thiết kế để thúc đẩy tăng trưởng doanh nghiệp và chuyển đổi số của bạn."
     },
