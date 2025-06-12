@@ -64,7 +64,7 @@ export default function Header() {
               className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-card border border-border hover:border-primary/50 text-foreground hover:text-primary transition-colors duration-200"
               aria-label={t('common.language')}
             >
-              {i18n.language.toUpperCase()}
+              {(i18n.language || 'en').slice(0, 2).toUpperCase()}
             </button>
 
             {/* Theme Toggle Button */}
@@ -84,7 +84,7 @@ export default function Header() {
                 className="w-9 h-9 rounded-full flex items-center justify-center text-foreground hover:text-primary transition-colors duration-200"
                 aria-label={t('common.language')}
               >
-                {i18n.language.toUpperCase()}
+                {(i18n.language || 'en').slice(0, 2).toUpperCase()}
               </button>
 
               {/* Theme Toggle Button - Mobile */}
