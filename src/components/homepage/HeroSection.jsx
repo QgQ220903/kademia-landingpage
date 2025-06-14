@@ -35,9 +35,10 @@ export default function HeroSection() {
           <h1 className="text-display mb-6 text-foreground">
             {t('hero.title.start')}{' '}
             <span className="text-primary font-bold">
-              {t('hero.title.highlight')}
-            </span>{' '}
-            {t('hero.title.end')}
+              {t('hero.title.highlight')} {' '}
+            </span>
+            <span className=''>{t('hero.title.end')}</span>
+
           </h1>
 
           {/* Subtitle */}
