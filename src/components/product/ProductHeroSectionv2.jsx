@@ -1,10 +1,20 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 import { useTranslation } from "react-i18next";
+import jabil1 from "../../assets/images/jabil1.jpg";
+import jabil2 from "../../assets/images/jabil2.jpg";
+import jabil3 from "../../assets/images/jabil3.jpg";
+import wahl1 from "../../assets/images/wahl1.jpg";
+import wahl2 from "../../assets/images/wahl2.jpg";
+import wahl3 from "../../assets/images/wahl3.jpg";
 
 const defaultSlides = [
   {
-    image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+    images: [
+      jabil1,
+      jabil2,
+      jabil3
+    ],
     titleKey: "product.hero.slides.powerApp.title",
     subtitleKey: "product.hero.slides.powerApp.subtitle",
     descriptionKey: "product.hero.slides.powerApp.description",
@@ -12,7 +22,11 @@ const defaultSlides = [
     buttonTextKey: "product.hero.slides.powerApp.button"
   },
   {
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+    images: [
+      wahl1,
+      wahl2,
+      wahl3
+    ],
     titleKey: "product.hero.slides.powerBI.title",
     subtitleKey: "product.hero.slides.powerBI.subtitle",
     descriptionKey: "product.hero.slides.powerBI.description",
@@ -20,7 +34,11 @@ const defaultSlides = [
     buttonTextKey: "product.hero.slides.powerBI.button"
   },
   {
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80"
+    ],
     titleKey: "product.hero.slides.m365.title",
     subtitleKey: "product.hero.slides.m365.subtitle",
     descriptionKey: "product.hero.slides.m365.description",
@@ -31,28 +49,52 @@ const defaultSlides = [
 
 export default function ProductHeroSection({ slides = defaultSlides }) {
   const [current, setCurrent] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const { theme } = useTheme();
   const { t } = useTranslation();
 
-  const { image, titleKey, subtitleKey, descriptionKey, link, buttonTextKey } = slides[current];
+  const { images, titleKey, subtitleKey, descriptionKey, link, buttonTextKey } = slides[current];
 
-  const prevSlide = () => setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  const nextSlide = () => setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    setCurrentImageIndex(0);
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     setTimeout(() => setIsVisible(true), 100);
   }, []);
 
+  // Auto slide images within current slide
   useEffect(() => {
     if (isPaused) return;
 
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 12000);
+    const imageTimer = setInterval(() => {
+      nextImage();
+    }, 3000); // Change image every 3 seconds
 
-    return () => clearInterval(timer);
+    return () => clearInterval(imageTimer);
+  }, [currentImageIndex, isPaused, images.length]);
+
+  // Auto change slides
+  useEffect(() => {
+    if (isPaused) return;
+
+    const slideTimer = setInterval(() => {
+      nextSlide();
+    }, 12000); // Change slide every 12 seconds
+
+    return () => clearInterval(slideTimer);
   }, [current, isPaused]);
 
   return (
@@ -83,11 +125,46 @@ export default function ProductHeroSection({ slides = defaultSlides }) {
               <div className="card-base cursor-pointer overflow-hidden max-w-md lg:max-w-xl w-full transition-all duration-500 hover:shadow-md">
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent z-10 rounded-lg" />
-                  <img
-                    src={image}
-                    alt={t(titleKey)}
-                    className="w-full h-80 lg:h-[28rem] object-cover rounded-lg transition-transform duration-700 group-hover:scale-105"
-                  />
+
+                  {/* Main Image Display */}
+                  <div className="relative overflow-hidden rounded-lg">
+                    <img
+                      src={images[currentImageIndex]}
+                      alt={`${t(titleKey)} - ${currentImageIndex + 1}`}
+                      className="w-full h-80 lg:h-[28rem] object-cover transition-all duration-700 group-hover:scale-105"
+                      key={`${current}-${currentImageIndex}`}
+                    />
+                  </div>
+
+                  {/* Image Thumbnails */}
+                  <div className="absolute bottom-20 left-4 right-4 z-20">
+                    <div className="flex gap-2 justify-center">
+                      {images.map((img, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`relative overflow-hidden rounded-md transition-all duration-300 ${currentImageIndex === index
+                            ? 'ring-2 ring-white/80 scale-110'
+                            : 'opacity-70 hover:opacity-100'
+                            }`}
+                        >
+                          <img
+                            src={img}
+                            alt={`${t(titleKey)} thumbnail ${index + 1}`}
+                            className="w-12 h-12 object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Image Progress Indicator */}
+                  <div className="absolute top-4 right-4 z-20">
+                    <div className="bg-black/40 text-white text-xs px-2 py-1 rounded-md">
+                      {currentImageIndex + 1} / {images.length}
+                    </div>
+                  </div>
+
                   <div className="absolute bottom-6 left-6 right-6 z-20">
                     <div className="text-white flex justify-between items-end">
                       <span className="text-sm font-medium bg-primary/90 px-2 py-1 rounded-md">
@@ -159,7 +236,10 @@ export default function ProductHeroSection({ slides = defaultSlides }) {
                   {slides.map((_, index) => (
                     <button
                       key={index}
-                      onClick={() => setCurrent(index)}
+                      onClick={() => {
+                        setCurrent(index);
+                        setCurrentImageIndex(0);
+                      }}
                       className={`h-2 rounded-full transition-all duration-300 ${current === index
                         ? "bg-primary w-8"
                         : "bg-foreground/20 w-2 hover:bg-foreground/40"
@@ -178,6 +258,22 @@ export default function ProductHeroSection({ slides = defaultSlides }) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
                 </button>
+              </div>
+
+              {/* Image Auto-Play Indicator */}
+              <div className="flex items-center gap-2 text-sm text-foreground/60">
+                <div className="flex gap-1">
+                  {images.map((_, index) => (
+                    <div
+                      key={index}
+                      className={`h-1 w-6 rounded-full transition-all duration-300 ${currentImageIndex === index
+                        ? 'bg-primary'
+                        : 'bg-foreground/20'
+                        }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-xs">Auto-play</span>
               </div>
             </div>
           </div>
