@@ -186,22 +186,16 @@
       "subtitle": "Khám phá bộ sản phẩm sáng tạo được thiết kế để tăng tốc tăng trưởng kinh doanh và chuyển đổi số của bạn.",
       "slides": {
         "powerApp": {
-          "title": "Phát triển Power App",
-          "subtitle": "Chương trình Đào tạo Jabil 2024",
+          "title": "Chương trình đào tạo PowerApps - Jabil 2024",
+          "subtitle": "Chứng chỉ jabil 2024",
           "description": "Thành thạo việc phát triển Power App với khóa học toàn diện được thiết kế cho chuyển đổi số của Jabil năm 2024. Học cách xây dựng ứng dụng kinh doanh tùy chỉnh với giải pháp no-code/low-code.",
           "button": "Bắt đầu Học"
         },
         "powerBI": {
-          "title": "Phân tích Power BI",
+          "title": "Chương trình đào tạo Power BI - Wahl 2025",
           "subtitle": "Chứng chỉ Wahl 2025",
           "description": "Đào tạo Power BI nâng cao cho chiến lược dữ liệu Wahl 2025. Chuyển đổi dữ liệu thô thành thông tin hữu ích mạnh mẽ với bảng điều khiển tương tác và công cụ thông minh kinh doanh.",
           "button": "Xem Chương trình"
-        },
-        "m365": {
-          "title": "Tích hợp Microsoft 365",
-          "subtitle": "Giải pháp Sẵn sàng Tương lai",
-          "description": "Học cách tích hợp Power Platform với hệ sinh thái Microsoft 365 để tự động hóa quy trình làm việc liền mạch và nâng cao năng suất trong toàn tổ chức.",
-          "button": "Khám phá Tích hợp"
         }
       },
       "controls": {

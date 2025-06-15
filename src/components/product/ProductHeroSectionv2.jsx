@@ -33,18 +33,7 @@ const defaultSlides = [
     link: "#power-bi",
     buttonTextKey: "product.hero.slides.powerBI.button"
   },
-  {
-    images: [
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80"
-    ],
-    titleKey: "product.hero.slides.m365.title",
-    subtitleKey: "product.hero.slides.m365.subtitle",
-    descriptionKey: "product.hero.slides.m365.description",
-    link: "#m365-integration",
-    buttonTextKey: "product.hero.slides.m365.button"
-  }
+
 ];
 
 export default function ProductHeroSection({ slides = defaultSlides }) {
@@ -92,7 +81,7 @@ export default function ProductHeroSection({ slides = defaultSlides }) {
 
     const slideTimer = setInterval(() => {
       nextSlide();
-    }, 12000); // Change slide every 12 seconds
+    }, 5000); // Change slide every 12 seconds
 
     return () => clearInterval(slideTimer);
   }, [current, isPaused]);
@@ -185,7 +174,9 @@ export default function ProductHeroSection({ slides = defaultSlides }) {
                 <span className="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
                   {t(subtitleKey)}
                 </span>
-                <h1 className="text-display text-foreground">
+                <h1 className="text-display text-foreground text-4xl
+
+">
                   {t(titleKey)}
                 </h1>
                 <p className="text-subheading text-foreground/80 max-w-2xl">
