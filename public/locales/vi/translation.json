@@ -12,8 +12,8 @@
   "hero": {
     "title": {
       "start": "Giải pháp",
-      "highlight": "Công nghệ",
-      "end": "cho Doanh nghiệp Hiện đại"
+      "highlight": "công nghệ",
+      "end": "cho doanh nghiệp hiện đại"
     },
     "subtitle": "Nâng tầm doanh nghiệp của bạn với các giải pháp công nghệ hiệu suất cao giúp tối ưu chi phí, thúc đẩy đổi mới và tăng trưởng trong kỷ nguyên số.",
     "cta": {
@@ -23,26 +23,26 @@
   },
   "features": {
     "title": "Dịch vụ",
-    "titleHighlight": "Cốt lõi",
+    "titleHighlight": "cốt lõi",
     "subtitle": "Chúng tôi cung cấp các giải pháp thiết yếu giúp doanh nghiệp của bạn phát triển thông minh và nhanh chóng thông qua tư vấn chiến lược, chuyển đổi số và phát triển nhân lực.",
     "items": {
       "supplyChain": {
-        "title": "Tư vấn Hiệu suất Chuỗi cung ứng",
+        "title": "Tư vấn hiệu suất chuỗi cung ứng",
         "description": "Tối ưu hóa hoạt động chuỗi cung ứng với tư vấn chiến lược để nâng cao hiệu quả, giảm chi phí và cải thiện hiệu suất tổng thể"
       },
       "digital": {
-        "title": "Chuyển đổi Số & Phân tích Dữ liệu",
+        "title": "Chuyển đổi số & phân tích dữ liệu",
         "description": "Thúc đẩy đổi mới thông qua các chiến lược chuyển đổi số toàn diện và giải pháp phân tích dữ liệu tiên tiến"
       },
       "training": {
-        "title": "Đào tạo & Phát triển Kỹ năng",
+        "title": "Đào tạo & phát triển Kỹ năng",
         "description": "Trao quyền cho lực lượng lao động của bạn với các chương trình đào tạo về công cụ cải thiện hiệu suất và chuyển đổi số"
       }
     }
   },
   "capabilities": {
     "title": "Năng lực",
-    "titleHighlight": "Công nghệ Số",
+    "titleHighlight": "công nghệ số",
     "subtitle": "Chúng tôi giúp các tổ chức thúc đẩy đổi mới và hiệu quả thông qua các công cụ số hiện đại, tạo ra giá trị nhanh chóng và tăng trưởng bền vững.",
     "items": {
       "lowCode": {
@@ -64,25 +64,25 @@
     }
   },
   "cta": {
-    "badge": "Sẵn sàng Chuyển đổi Doanh nghiệp của bạn",
+    "badge": "Sẵn sàng chuyển đổi doanh nghiệp của bạn",
     "title": {
       "start": "Bắt đầu với",
-      "highlight": "Giải pháp Chuyên nghiệp"
+      "highlight": "giải pháp chuyên nghiệp"
     },
     "description": "Đặt lịch tư vấn miễn phí để khám phá cách các giải pháp phù hợp có thể tối ưu hóa hoạt động và mang lại kết quả đo lường được.",
-    "button": "Bắt đầu Tư vấn Miễn phí"
+    "button": "Bắt đầu tư vấn miễn phí"
   },
   "footer": {
     "description": "Trao quyền cho doanh nghiệp thông qua các giải pháp công nghệ sáng tạo.",
     "contact": {
-      "title": "Thông tin Liên hệ",
+      "title": "Thông tin liên hệ",
       "address": "5 Mê Linh, Quận 1, Thành phố Hồ Chí Minh, Việt Nam",
       "phone": "(+84) 96 876 4080",
       "email": "hello@kademia.edu.vn",
       "hours": "Thứ Hai - Thứ Sáu: 8:00 Sáng - 6:00 Chiều"
     },
     "quickLinks": {
-      "title": "Liên kết Nhanh",
+      "title": "Liên kết nhanh",
       "home": "Trang chủ",
       "about": "Về chúng tôi",
       "product": "Sản phẩm",
@@ -99,28 +99,28 @@
     "coreValues": {
       "title": {
         "start": "Giá trị",
-        "highlight": "Cốt lõi"
+        "highlight": "cốt lõi"
       },
       "subtitle": "Những nguyên tắc cơ bản hướng dẫn mọi quyết định và hành động chúng tôi thực hiện, đảm bảo kết quả xuất sắc và duy trì các tiêu chuẩn đạo đức cao nhất.",
       "items": [
         {
           "icon": "users",
-          "title": "Tiếp cận Lấy Khách hàng làm Trung tâm",
+          "title": "Tiếp cận lấy Khách hàng làm trung tâm",
           "description": "Tất cả giải pháp của chúng tôi đều đặt khách hàng làm trung tâm."
         },
         {
           "icon": "award",
-          "title": "Chất lượng Xuất sắc",
+          "title": "Chất lượng xuất sắc",
           "description": "Chúng tôi cam kết cung cấp tiêu chuẩn cao nhất trong mọi sản phẩm và dịch vụ."
         },
         {
           "icon": "trending-up",
-          "title": "Đổi mới Liên tục",
+          "title": "Đổi mới liên tục",
           "description": "Chúng tôi không ngừng đổi mới và áp dụng các công nghệ mới nhất để luôn đi đầu xu hướng."
         },
         {
           "icon": "globe",
-          "title": "Tư duy Toàn cầu",
+          "title": "Tư duy toàn cầu",
           "description": "Các giải pháp của chúng tôi đáp ứng tiêu chuẩn quốc tế và sẵn sàng cho tích hợp toàn cầu."
         }
       ]
@@ -128,8 +128,8 @@
     "ctaSection": {
       "title": {
         "start": "Sẵn sàng",
-        "highlight": "Chuyển đổi",
-        "end": "Doanh nghiệp của bạn?"
+        "highlight": "chuyển đổi",
+        "end": "doanh nghiệp của bạn?"
       },
       "description": "Liên hệ với đội ngũ của chúng tôi ngay hôm nay để được tư vấn cá nhân hóa và khám phá giải pháp hoàn hảo phù hợp cho doanh nghiệp của bạn.",
       "button": "Liên hệ"
@@ -155,7 +155,7 @@
       "button": "Gửi tin nhắn"
     },
     "info": {
-      "heading": "Thông tin Liên hệ",
+      "heading": "Thông tin liên hệ",
       "email": "Email",
       "phone": "Điện thoại",
       "address": "Địa chỉ",
@@ -207,38 +207,38 @@
     },
     "features": {
       "title": "Tính năng",
-      "titleHighlight": "Sản phẩm",
+      "titleHighlight": "sản phẩm",
       "subtitle": "Các tính năng chính làm nên sự khác biệt của sản phẩm chúng tôi.",
       "items": {
         "feature1": {
-          "title": "Công cụ Tự động hóa",
+          "title": "Công cụ tự động hóa",
           "description": "Hợp lý hóa quy trình làm việc của bạn với các giải pháp tự động hóa tiên tiến."
         },
         "feature2": {
-          "title": "Tích hợp Đám mây",
+          "title": "Tích hợp đám mây",
           "description": "Kết nối và mở rộng liền mạch với các dịch vụ đám mây bảo mật."
         },
         "feature3": {
-          "title": "Sẵn sàng Di động",
+          "title": "Sẵn sàng di động",
           "description": "Truy cập và quản lý doanh nghiệp của bạn mọi lúc, mọi nơi với các giải pháp di động của chúng tôi."
         }
       }
     },
     "featured": {
       "title": "Sản phẩm",
-      "titleHighlight": "Nổi bật",
+      "titleHighlight": "nổi bật",
       "subtitle": "Khám phá các sản phẩm hàng đầu được thiết kế để giải quyết những thách thức kinh doanh quan trọng nhất của bạn.",
       "items": {
         "product1": {
-          "title": "Bộ công cụ Tự động hóa Kademia",
+          "title": "Bộ công cụ tự động hóa Kademia",
           "description": "Nền tảng tự động hóa toàn diện giúp hợp lý hóa quy trình làm việc và loại bỏ các tác vụ lặp đi lặp lại trong toàn tổ chức."
         },
         "product2": {
-          "title": "Bảng điều khiển Thông minh Kinh doanh",
+          "title": "Bảng điều khiển thông minh Kinh doanh",
           "description": "Nền tảng phân tích tiên tiến cung cấp thông tin chi tiết theo thời gian thực và hỗ trợ ra quyết định dựa trên dữ liệu cho các nhà lãnh đạo kinh doanh."
         },
         "product3": {
-          "title": "Nền tảng Bảo mật Doanh nghiệp",
+          "title": "Nền tảng bảo mật doanh nghiệp",
           "description": "Giải pháp bảo mật đa lớp bảo vệ tài sản số của bạn với khả năng phát hiện mối đe dọa tiên tiến và quản lý tuân thủ."
         }
       }
@@ -246,7 +246,7 @@
     "cta": {
       "title": {
         "start": "Sẵn sàng",
-        "highlight": "Trải nghiệm?",
+        "highlight": "trải nghiệm?",
         "end": ""
       },
       "description": "Liên hệ với chúng tôi ngay hôm nay để được demo cá nhân hóa và xem cách các sản phẩm của chúng tôi có thể trao quyền cho doanh nghiệp của bạn.",

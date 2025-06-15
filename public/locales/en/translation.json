@@ -186,22 +186,16 @@
       "subtitle": "Explore our innovative product suite designed to accelerate your business growth and digital transformation.",
       "slides": {
         "powerApp": {
-          "title": "Power App Development",
-          "subtitle": "Jabil 2024 Training Program",
-          "description": "Master Power App development with our comprehensive course designed for Jabil's 2024 digital transformation. Learn to build custom business applications with no-code/low-code solutions.",
+          "title": "PowerApps Training Program - Jabil 2024",
+          "subtitle": "Jabil 2024 Certification",
+          "description": "Master Power App development with a comprehensive course designed for Jabil's 2024 digital transformation. Learn to build custom business applications with no-code/low-code solutions.",
           "button": "Start Learning"
         },
         "powerBI": {
-          "title": "Power BI Analytics",
+          "title": "Power BI Training Program - Wahl 2025",
           "subtitle": "Wahl 2025 Certification",
           "description": "Advanced Power BI training for Wahl's 2025 data strategy. Transform raw data into powerful insights with interactive dashboards and business intelligence tools.",
           "button": "View Curriculum"
-        },
-        "m365": {
-          "title": "Microsoft 365 Integration",
-          "subtitle": "Future-Ready Solutions",
-          "description": "Learn to integrate Power Platform with Microsoft 365 ecosystem for seamless workflow automation and productivity enhancement across your organization.",
-          "button": "Explore Integration"
         }
       },
       "controls": {

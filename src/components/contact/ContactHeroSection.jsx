@@ -34,9 +34,8 @@ const ContactHeroSection = () => {
             {t('contact.hero.title')}
           </span>
         </h1>
-
         {/* Subtitle */}
-        <p className="text-subheading text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-lg text-foreground/80 mb-10 max-w-3xl mx-auto leading-relaxed">
           {t('contact.hero.subtitle')}
         </p>
       </div>
